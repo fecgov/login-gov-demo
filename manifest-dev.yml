@@ -1,0 +1,9 @@
+---
+applications:
+- name: login-demo
+  route: login-demo-dev.app.cloud.gov
+  buildpacks:
+    - python_buildpack
+  memory: 512M
+  env:
+    DISABLE_COLLECTSTATIC: 1

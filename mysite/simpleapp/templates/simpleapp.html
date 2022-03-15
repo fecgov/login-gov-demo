@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>simpleapp</title>
+</head>
+<body>
+<p>Hello, world. You're at the simpleapp index.</p>
+</body>
+</html>
+{% if user.is_authenticated %}
+  <p>Current user: {{ user.email }}</p>
+  <form action="{% url 'oidc_logout' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="logout">
+  </form>
+{% else %}
+  <a href="{% url 'oidc_authentication_init' %}">Login</a>
+{% endif %}
