@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    # Add the app here
     'mozilla_django_oidc',  # Load after auth
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -103,6 +104,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+## OIDC settings start
+
 AUTHENTICATION_BACKENDS = (
     'mozilla_django_oidc.auth.OIDCAuthenticationBackend',
 )
@@ -120,8 +123,14 @@ OIDC_OP_TOKEN_ENDPOINT = OIDC_OP_CONFIG.get("token_endpoint")
 OIDC_OP_USER_ENDPOINT = OIDC_OP_CONFIG.get("userinfo_endpoint")
 
 # TODO: Make this an env var
-LOGIN_REDIRECT_URL = "https://login-demo.app.cloud.gov/simpleapp"
-LOGOUT_REDIRECT_URL = "https://login-demo.app.cloud.gov/simpleapp"
+LOGIN_REDIRECT_URL = "https://login-demo.app.cloud.gov/simpleapp/"
+LOGOUT_REDIRECT_URL = "https://login-demo.app.cloud.gov/simpleapp/"
+
+OIDC_AUTH_REQUEST_EXTRA_PARAMS = {
+    "acr_values": "http://idmanagement.gov/ns/assurance/ial/1"
+}
+
+## OIDC settings end
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
