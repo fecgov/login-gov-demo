@@ -50,5 +50,10 @@ OIDC_RP_CLIENT_SECRET=`cat private.pem`  # see login.gov docs on how to generate
 cf restage login-demo
 ```
 
+### Create database service
+```
+cf create-service aws-rds small-psql-redundant login-demo-rds
+```
+
 ### Test on cloud.gov
 https://login-demo.app.cloud.gov/simpleapp

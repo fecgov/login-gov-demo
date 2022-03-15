@@ -5,5 +5,7 @@ applications:
   buildpacks:
     - python_buildpack
   memory: 512M
+  services:
+    - login-demo-rds
   env:
     DISABLE_COLLECTSTATIC: 1
