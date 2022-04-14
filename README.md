@@ -57,3 +57,10 @@ cf create-service aws-rds small-psql-redundant login-demo-rds
 
 ### Test on cloud.gov
 https://login-demo.app.cloud.gov/simpleapp
+
+### Create super user
+```
+ssh login-demo
+/tmp/lifecycle/shell
+./manage.py createsuperuser
+```
