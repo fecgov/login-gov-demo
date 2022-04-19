@@ -7,5 +7,6 @@ applications:
   memory: 512M
   services:
     - login-demo-rds
+    - login-creds
   env:
     DISABLE_COLLECTSTATIC: 1
