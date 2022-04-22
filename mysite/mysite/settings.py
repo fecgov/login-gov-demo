@@ -111,6 +111,9 @@ AUTHENTICATION_BACKENDS = (
 )
 
 OIDC_CREATE_USER = True
+OIDC_STORE_ID_TOKEN = True
+# Maximum number of concurrent sessions
+OIDC_MAX_STATES = 3
 
 OIDC_RP_SIGN_ALGO = "RS256"
 OIDC_RP_CLIENT_ID = os.environ.get('OIDC_RP_CLIENT_ID')
