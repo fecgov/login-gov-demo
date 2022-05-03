@@ -110,6 +110,8 @@ AUTHENTICATION_BACKENDS = (
     'mozilla_django_oidc.auth.OIDCAuthenticationBackend',
 )
 
+AUTH_USER_MODEL = 'simpleapp.FECFileUser'
+
 OIDC_CREATE_USER = True
 OIDC_STORE_ID_TOKEN = True
 # Maximum number of concurrent sessions
