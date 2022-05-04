@@ -122,9 +122,10 @@ OIDC_MAX_STATES = 3
 OIDC_RP_SIGN_ALGO = "RS256"
 OIDC_RP_CLIENT_ID = os.environ.get('OIDC_RP_CLIENT_ID')
 OIDC_RP_CLIENT_SECRET = os.environ.get('OIDC_RP_CLIENT_SECRET')
+
+# The Django field used to identify users - default is email
 OIDC_RP_UNIQUE_IDENTIFIER = "uuid"
 
-# {"django_field": "login_dot_gov_field"}
 OIDC_RP_EXTRA_USER_FIELDS = {
     "uuid": "sub"
 }
