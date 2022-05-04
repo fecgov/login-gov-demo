@@ -60,7 +60,8 @@ https://login-demo.app.cloud.gov/simpleapp
 
 ### Create super user
 ```
-ssh login-demo
+cf ssh login-demo
 /tmp/lifecycle/shell
+cd mysite
 ./manage.py createsuperuser
 ```
