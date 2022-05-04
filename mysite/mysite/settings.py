@@ -110,7 +110,7 @@ AUTHENTICATION_BACKENDS = (
     'mozilla_django_oidc.auth.OIDCAuthenticationBackend',
 )
 
-AUTH_USER_MODEL = 'simpleapp.FECFileUser'
+AUTH_USER_MODEL = 'simpleapp.User'
 
 OIDC_CREATE_USER = True
 OIDC_STORE_ID_TOKEN = True
