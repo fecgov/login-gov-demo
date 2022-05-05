@@ -126,9 +126,8 @@ OIDC_RP_CLIENT_SECRET = os.environ.get('OIDC_RP_CLIENT_SECRET')
 # The Django field used to identify users - default is email
 OIDC_RP_UNIQUE_IDENTIFIER = "uuid"
 
-OIDC_RP_EXTRA_USER_FIELDS = {
-    "uuid": "sub"
-}
+# Sometimes the OP (IDP - login.gov)has a different label for the unique ID
+OIDC_OP_UNIQUE_IDENTIFIER = "sub"
 
 OIDC_OP_AUTODISCOVER_ENDPOINT = "https://idp.int.identitysandbox.gov/.well-known/openid-configuration"
 OIDC_OP_CONFIG = requests.get(OIDC_OP_AUTODISCOVER_ENDPOINT).json()
