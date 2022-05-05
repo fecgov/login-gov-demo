@@ -129,6 +129,9 @@ OIDC_RP_UNIQUE_IDENTIFIER = "uuid"
 # Sometimes the OP (IDP - login.gov)has a different label for the unique ID
 OIDC_OP_UNIQUE_IDENTIFIER = "sub"
 
+# Default implicit_flow is considered vulnerable
+OIDC_OP_CLIENT_AUTH_METHOD = "private_key_jwt"
+
 OIDC_OP_AUTODISCOVER_ENDPOINT = "https://idp.int.identitysandbox.gov/.well-known/openid-configuration"
 OIDC_OP_CONFIG = requests.get(OIDC_OP_AUTODISCOVER_ENDPOINT).json()
 
